@@ -1,6 +1,8 @@
 package com.jafa.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.jafa.domain.AuthVO;
@@ -18,8 +20,11 @@ public class MemberService {
 	@Autowired
 	AuthRepository authRepository;
 	
+	@Autowired
+	PasswordEncoder passwordEncoder;
 	
 	public void join(MemberVO vo) {
+		vo.setPassword(passwordEncoder.encode(vo.getPassword()));
 		memberRepository.save(vo);
 		AuthVO authVO = AuthVO.builder()
 				.memberId(vo.getMemberId())

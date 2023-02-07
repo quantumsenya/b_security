@@ -7,6 +7,7 @@
 	<h1>메인</h1>
 	<sec:authorize access="isAnonymous()"> <!-- 권한이 없는 경우(로그인을 하지 않은 사용자) -->
 		<a href="${contextPath}/member/login">로그인</a><br>
+		<a href="${contextPath}/member/join">회원가입</a> <br>
 	</sec:authorize>
 	<a href="${contextPath}/member/all">모든사용자</a><br>
 	<a href="${contextPath}/member/member">회원페이지</a><br>

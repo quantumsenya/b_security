@@ -19,6 +19,9 @@
 	<!-- 로그아웃 성공 핸들러 빈 -->
 	<bean id="logoutSuccessHandler" class="com.jafa.security.LogoutSuccessHandlerImpl"></bean>
 	
+	<!-- 비밀번호 암호화 빈 -->
+	<bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+	
 	<security:http>
 		<!-- 로그인 페이지 -->
 		<security:form-login login-page="/member/login"
