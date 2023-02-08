@@ -20,6 +20,7 @@
 			</div>
 		</c:if>
 		<button class="btn btn-primary">로그인</button>
+		<input type="checkbox" name="remember-me"> 로그인상태 유지
 	</form>
 </div>
 

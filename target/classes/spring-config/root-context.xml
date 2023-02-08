@@ -9,7 +9,7 @@
 	
 	<context:property-placeholder location="classpath:database/oracle.properties" />
 	
-	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
+	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close">
 		<property name="driverClassName" value="${db.driver}"/>
 		<property name="url" value="${db.url}"/>
 		<property name="username" value="${db.username}"/>
